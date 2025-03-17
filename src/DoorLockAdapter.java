@@ -1,4 +1,11 @@
-package PACKAGE_NAME;
+public class DoorLockAdapter extends BaseDevice {
+    private LegacyDoorLock lock;
 
-public class DoorLockAdapter {
+    public DoorLockAdapter(LegacyDoorLock lock, String name) {
+        super(name);
+        this.lock = lock;
+    }
+
+    public void turnOn() { lock.lock(); isOn = true; }
+    public void turnOff() { lock.unlock(); isOn = false; }
 }
